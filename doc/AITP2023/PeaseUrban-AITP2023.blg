@@ -1,0 +1,64 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: PeaseUrban-AITP2023.aux
+The style file: plain.bst
+Database file #1: PeaseUrban-AITP2023.bib
+Repeated entry---line 484 of file PeaseUrban-AITP2023.bib
+ : @inproceedings{ps14
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 597 of file PeaseUrban-AITP2023.bib
+ : @book{p11
+ :          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 969 of file PeaseUrban-AITP2023.bib
+ : @inproceedings{np01
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1184 of file PeaseUrban-AITP2023.bib
+ : @article{BenzLEO2008
+ :                     ,
+I'm skipping whatever remains of this entry
+Warning--empty journal in bpu23
+You've used 13 entries,
+            2118 wiz_defined-function locations,
+            584 strings with 6313 characters,
+and the built_in function-call counts, 4355 in all, are:
+= -- 416
+> -- 195
+< -- 5
++ -- 74
+- -- 61
+* -- 266
+:= -- 716
+add.period$ -- 43
+call.type$ -- 13
+change.case$ -- 65
+chr.to.int$ -- 0
+cite$ -- 14
+duplicate$ -- 197
+empty$ -- 379
+format.name$ -- 61
+if$ -- 945
+int.to.chr$ -- 0
+int.to.str$ -- 13
+missing$ -- 14
+newline$ -- 68
+num.names$ -- 31
+pop$ -- 92
+preamble$ -- 1
+purify$ -- 54
+quote$ -- 0
+skip$ -- 126
+stack$ -- 0
+substring$ -- 202
+swap$ -- 46
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 48
+warning$ -- 1
+while$ -- 43
+width$ -- 15
+write$ -- 146
+(There were 4 error messages)

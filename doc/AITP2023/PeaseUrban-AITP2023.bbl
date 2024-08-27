@@ -1,0 +1,82 @@
+\begin{thebibliography}{10}
+
+\bibitem{BenzLEO2008}
+Christoph Benzm{\"u}ller, Laurence Paulson, Frank Theiss, and A.~Fietzke.
+\newblock (2008).
+\newblock {\em LEO-{II} - {A} {Cooperative} {Automatic} {Theorem} {Prover} for
+  {Higher}-{Order} {Logic}. {In} {Proceedings} of the {Fourth} {International}
+  {Joint} {Conference} on {Automated} {Reasoning} ({IJCAR}'08), {LNAI} volume},
+  5195:162--170, 2008.
+
+\bibitem{bp10}
+Christoph Benzm\"{u}ller and Adam Pease.
+\newblock {Progress in automating higher-order ontology reasoning}.
+\newblock In Boris Konev, Renate Schmidt, and Stephan Schulz, editors, {\em
+  {Workshop on Practical Aspects of Automated Reasoning (PAAR-2010)}}. CEUR
+  Workshop Proceedings, Edinburgh, UK, 2010.
+
+\bibitem{bpu23}
+Chad Brown, Adam Pease, and Josef Urban.
+\newblock {Translating SUMO-K to Higher-Order Set Theory}.
+\newblock submit/4892900, 2023.
+
+\bibitem{Fellbaum1998}
+Christiane Fellbaum, editor.
+\newblock {\em {WordNet}: An Electronic Lexical Database}.
+\newblock MIT Press, 1998.
+
+\bibitem{Kovacs:2013:FTP:2958031.2958033}
+Laura Kov\'{a}cs and Andrei Voronkov.
+\newblock First-order theorem proving and vampire.
+\newblock In {\em Proceedings of the 25th International Conference on Computer
+  Aided Verification}, volume 8044 of {\em CAV 2013}, pages 1--35, New York,
+  NY, USA, 2013. Springer-Verlag New York, Inc.
+
+\bibitem{np01}
+Ian Niles and Adam Pease.
+\newblock {Toward a Standard Upper Ontology}.
+\newblock In Chris Welty and Barry Smith, editors, {\em Proceedings of the 2nd
+  International Conference on Formal Ontology in Information Systems
+  (FOIS-2001)}, pages 2--9, 2001.
+
+\bibitem{np03}
+Ian Niles and Adam Pease.
+\newblock {Linking Lexicons and Ontologies: Mapping WordNet to the Suggested
+  Upper Merged Ontology}.
+\newblock In {\em {Proceedings of the IEEE International Conference on
+  Information and Knowledge Engineering}}, pages 412--416, 2003.
+
+\bibitem{p11}
+Adam Pease.
+\newblock {\em {Ontology: A Practical Guide}}.
+\newblock Articulate Software Press, Angwin, CA, 2011.
+
+\bibitem{Pease2019}
+Adam Pease.
+\newblock Arithmetic and inference in a large theory.
+\newblock In {\em AI in Theorem Proving}, 2019.
+
+\bibitem{ps14}
+Adam Pease and Stephan Schulz.
+\newblock {Knowledge Engineering for Large Ontologies with Sigma KEE 3.0}.
+\newblock In {\em {The International Joint Conference on Automated Reasoning}},
+  2014.
+
+\bibitem{Schulz:AICOM-2002}
+S.~Schulz.
+\newblock {E -- A Brainiac Theorem Prover}.
+\newblock {\em Journal of AI Communications}, 15(2/3):111--126, 2002.
+
+\bibitem{tsp08}
+Steven Trac, Geoff Sutcliffe, and Adam Pease.
+\newblock {Integration of the TPTPWorld into SigmaKEE}.
+\newblock In {\em {Proceedings of IJCAR '08 Workshop on Practical Aspects of
+  Automated Reasoning (PAAR-2008)}}. CEUR Workshop Proceedings, 2008.
+
+\bibitem{Wang2020}
+Qingxiang Wang, Chad~E. Brown, Cezary Kaliszyk, and Josef Urban.
+\newblock Exploration of neural machine translation in autoformalization of
+  mathematics in mizar.
+\newblock In {\em CPP}, pages 85--98. ACM, 2020.
+
+\end{thebibliography}

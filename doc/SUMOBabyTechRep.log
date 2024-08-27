@@ -1,0 +1,304 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.5.12)  7 DEC 2022 09:55
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**SUMOBabyTechRep
+(./SUMOBabyTechRep.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@section=\count186
+\c@subsection=\count187
+\c@subsubsection=\count188
+\c@paragraph=\count189
+\c@subparagraph=\count190
+\c@figure=\count191
+\c@table=\count192
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2020/03/25 PSNFSS-v9.3 (SPQR) 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/helvet.sty
+Package: helvet 2020/03/25 PSNFSS-v9.3 (WaS) 
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+))
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/courier.sty
+Package: courier 2020/03/25 PSNFSS-v9.3 (WaS) 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/doc.sty
+Package: doc 2021/10/04 v2.1n Standard LaTeX documentation package (FMi)
+\c@StandardModuleDepth=\count193
+\guard@level=\count194
+\MacrocodeTopsep=\skip49
+\MacroIndent=\dimen139
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 1
+92.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+\macro@cnt=\count195
+\MacroTopsep=\skip50
+\index@excludelist=\toks17
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2021/10/28 v1.9b multicolumn formatting (FMi)
+\c@tracingmulticols=\count196
+\mult@box=\box50
+\multicol@leftmargin=\dimen140
+\c@unbalance=\count197
+\c@collectmore=\count198
+\doublecol@number=\count199
+\multicoltolerance=\count266
+\multicolpretolerance=\count267
+\full@width=\dimen141
+\page@free=\dimen142
+\premulticols=\dimen143
+\postmulticols=\dimen144
+\multicolsep=\skip51
+\multicolbaselineskip=\skip52
+\partial@page=\box51
+\last@line=\box52
+\maxbalancingoverflow=\dimen145
+\mult@rightbox=\box53
+\mult@grightbox=\box54
+\mult@firstbox=\box55
+\mult@gfirstbox=\box56
+\@tempa=\box57
+\@tempa=\box58
+\@tempa=\box59
+\@tempa=\box60
+\@tempa=\box61
+\@tempa=\box62
+\@tempa=\box63
+\@tempa=\box64
+\@tempa=\box65
+\@tempa=\box66
+\@tempa=\box67
+\@tempa=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\c@minrows=\count268
+\c@columnbadness=\count269
+\c@finalcolumnbadness=\count270
+\last@try=\dimen146
+\multicolovershoot=\dimen147
+\multicolundershoot=\dimen148
+\mult@nat@firstbox=\box93
+\colbreak@box=\box94
+\mc@col@check@num=\count271
+)
+\IndexMin=\dimen149
+\c@IndexColumns=\count272
+\GlossaryMin=\dimen150
+\c@GlossaryColumns=\count273
+\check@sum=\count274
+\bslash@cnt=\count275
+\wrong@table=\toks18
+\c@CodelineNo=\count276
+)
+(/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip53
+\fb@frw=\dimen151
+\fb@frh=\dimen152
+\FrameRule=\dimen153
+\FrameSep=\dimen154
+)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen155
+\ar@mcellbox=\box95
+\extrarowheight=\dimen156
+\NC@list=\toks19
+\extratabsurround=\skip54
+\backup@length=\skip55
+\ar@cellbox=\box96
+)
+\TX@col@width=\dimen157
+\TX@old@table=\dimen158
+\TX@old@col=\dimen159
+\TX@target=\dimen160
+\TX@delta=\dimen161
+\TX@cols=\count277
+\TX@ftn=\toks20
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count278
+\lst@gtempboxa=\box97
+\lst@token=\toks21
+\lst@length=\count279
+\lst@currlwidth=\dimen162
+\lst@column=\count280
+\lst@pos=\count281
+\lst@lostspace=\dimen163
+\lst@width=\dimen164
+\lst@newlines=\count282
+\lst@lineno=\count283
+\lst@maxwidth=\dimen165
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count284
+\lst@skipnumbers=\count285
+\lst@framebox=\box98
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count286
+\l__pdf_internal_box=\box99
+)
+(./SUMOBabyTechRep.aux)
+\openout1 = `SUMOBabyTechRep.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+\c@lstlisting=\count287
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 20.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 20.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 20.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 2
+2.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 22.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 22.
+
+Overfull \hbox (26.01988pt too wide) in paragraph at lines 22--25
+\OT1/pcr/m/n/10 mlpipeline . GenSimpTestData$ \OT1/ptm/m/n/10 at $\OT1/pcr/m/n/
+10 https : / / github . com / ontologyportal /
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 3
+1.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
+Overfull \hbox (599.99893pt too wide) in paragraph at lines 69--69
+[]\OT1/pcr/m/n/9 $ time java -Xmx14g -classpath /home/apease/workspace/sigmakee
+/lib/*:/home/apease/workspace/sigmakee/build/classes com.articulate.sigma.mlpip
+eline.GenSimpTestData -a allAxioms[] 
+ []
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (632.3989pt too wide) in paragraph at lines 69--69
+[]\OT1/pcr/m/n/9 $ time java -Xmx60g -classpath /home/apease/workspace/sigmakee
+/lib/*:/home/apease/workspace/sigmakee/build/classes com.articulate.sigma.mlpip
+eline.GenSimpTestData -g groundRelations[] 
+ []
+
+
+Overfull \hbox (621.5989pt too wide) in paragraph at lines 69--69
+[]\OT1/pcr/m/n/9 $ time java -Xmx14g -classpath /home/apease/workspace/sigmakee
+/lib/*:/home/apease/workspace/sigmakee/build/classes com.articulate.sigma.mlpip
+eline.GenSimpTestData -s outKindaSmall[] 
+ []
+
+
+Overfull \hbox (130.19946pt too wide) in paragraph at lines 76--76
+[]\OT1/pcr/m/n/9 $ cat allAxioms-eng.txt groundRelations-eng.txt outKindaSmall-
+eng.txt > combined-eng.txt[] 
+ []
+
+
+Overfull \hbox (130.19946pt too wide) in paragraph at lines 76--76
+[]\OT1/pcr/m/n/9 $ cat allAxioms-log.txt groundRelations-log.txt outKindaSmall-
+log.txt > combined-log.txt[] 
+ []
+
+
+Overfull \hbox (0.59961pt too wide) in paragraph at lines 82--82
+[]\OT1/pcr/m/n/9 $ ~/workspace/sumonlp/preprocess.sh ~/nfs/data/combined combin
+ed[] 
+ []
+
+[2] [3] (./SUMOBabyTechRep.bbl
+
+LaTeX Warning: Empty `thebibliography' environment on input line 3.
+
+) [4] (./SUMOBabyTechRep.aux) ) 
+Here is how much of TeX's memory you used:
+ 2649 strings out of 478287
+ 41812 string characters out of 5849289
+ 340459 words of memory out of 5000000
+ 20852 multiletter control sequences out of 15000+600000
+ 481241 words of font info for 53 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 41i,6n,48p,328b,271s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/b
+ase/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on SUMOBabyTechRep.pdf (4 pages, 52286 bytes).
+PDF statistics:
+ 33 PDF objects out of 1000 (max. 8388607)
+ 20 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

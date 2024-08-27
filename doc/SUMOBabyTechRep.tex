@@ -1,0 +1,165 @@
+\documentclass[letterpaper]{article}
+\usepackage{times}
+\usepackage{helvet}
+\usepackage{courier}
+\usepackage{doc}
+\usepackage{framed}
+\usepackage{url}
+\usepackage{tabularx}
+\usepackage{listings}
+\frenchspacing
+\setlength{\pdfpagewidth}{8.5in}
+\setlength{\pdfpageheight}{11in}
+
+\title{SUMO's new bAbI: A Neuro-Symbolic Approach to Natural Language Inference}
+\date{\vspace{-5ex}}
+\author{Adam Pease and Josef Urban} 
+
+\begin{document}
+
+\maketitle
+
+We are conducting experiments in machine translation from natural language to logic using SUMO \url{https://github.com/ontologyportal/sumo} terms.
+The code to create the datasets for training is in \url{com.articulate.sigma.mlpipeline.GenSimpTestData} at 
+\url{https://github.com/ontologyportal/sigmakee}.
+
+The ML training resource used is \url{https://github.com/tensorflow/nmt}
+
+This SigmaKEE code generates language-logic pairs designed for training a machine learning system. Several approaches are used:
+
+\begin{itemize}
+\item instantiate relations with arguments of appropriate types and then generate NL paraphrases from them
+\item run through all formulas in SUMO and generate NL paraphrases
+\item build up sentences and logic expressions compositionally
+\end{itemize}
+
+
+The compositional generation is potentially the most comprehensive. It consists of building ever more complex statements that wrap or extend simpler statements. Originally, this meant starting with a simple subject-verb-object construction and adding:
+
+\begin{itemize}
+\item indirect objects
+\item tenses for the verbs
+\item modals
+\end{itemize}
+
+Ultimately we believe we can feed natural text to the system and save formulas that pass test for correctness from SigmaKEE
+
+We should be able to wrap everything in negated/not-negated, likely/unlikely.
+
+We plan to trap bad constructions by using language models to eliminate rare combinations of words, maybe.
+
+\section{Appendix: Mechanics}
+
+I put the following in my .bashrc
+
+\begin{verbatim}
+/home/mptp/miniconda3/condabin/conda init bash
+source /home/mptp/.bashrc
+conda activate tf_gpu112
+\end{verbatim}
+
+I run the following to produce the SUMO-based training files
+
+\begin{verbatim}
+$ time java -Xmx14g -classpath /home/apease/workspace/sigmakee/lib/*:/home/apease/workspace/sigmakee/build/classes com.articulate.sigma.mlpipeline.GenSimpTestData -a allAxioms
+
+$ time java -Xmx60g -classpath /home/apease/workspace/sigmakee/lib/*:/home/apease/workspace/sigmakee/build/classes com.articulate.sigma.mlpipeline.GenSimpTestData -g groundRelations
+
+$ time java -Xmx14g -classpath /home/apease/workspace/sigmakee/lib/*:/home/apease/workspace/sigmakee/build/classes com.articulate.sigma.mlpipeline.GenSimpTestData -s outKindaSmall
+\end{verbatim}
+
+Each command produces a -log.txt and -eng.txt file. Make sure they completed and each file is the same number of lines as its sibling. Then concatenate them all together
+
+\begin{verbatim}
+$ cat allAxioms-eng.txt groundRelations-eng.txt outKindaSmall-eng.txt > combined-eng.txt
+$ cat allAxioms-log.txt groundRelations-log.txt outKindaSmall-log.txt > combined-log.txt
+\end{verbatim}
+
+The two -eng and -log files can go anywhere. They first need some pre-processing with
+
+\begin{verbatim}
+$ ~/workspace/sumonlp/preprocess.sh ~/nfs/data/combined combined
+\end{verbatim}
+
+Note that it produces the vocab.* files that will typically have empty (or just whitespace) lines in them. You need to delete these empty lines manually (or improve the script).
+
+The result will be files call trainX, devX and testX where X is ".nat" and ".sum1" in the "combined" directory. When running the training process the script needs to be run from a directory
+
+where you have installed nmt. For me that's in ~/test1
+
+\begin{verbatim}
+$ ~/workspace/sumonlp/training.sh ~/nfs/data/combined
+\end{verbatim}
+
+Then you can test it
+
+\begin{verbatim}
+$ ~/workspace/sumonlp/test.sh ~/nfs/data/combined/models/model
+\end{verbatim}
+
+Note that you should first check which GPU cards are free by runing
+
+\begin{verbatim}
+nvidia-smi
+\end{verbatim}
+
+When you see that e.g. GPU number 1 is free, do the following to put your job there:
+
+\begin{verbatim}
+export CUDA\_VISIBLE_DEVICES=2
+\end{verbatim}
+
+Note that this number seems to be off by 1 on air-05 (likely a peculiarity of air-05).
+
+If you are getting OOM (Out of Memorey) crashes, decrease the batch size in the training script in this line:
+
+\begin{verbatim}
+  --batch_size=768 \
+\end{verbatim}
+
+e.g.
+
+to 32 (and fine tune it later if its too low/high).
+
+Don't forget to delete the model directory if you change such parameters, otherwise the old params will be kept and read from the file hparams there.
+
+Running many of these steps can take time. Here are some current values to support expectations and estimates
+
+\begin{itemize}
+\item We can generate about 1M language-logic pairs per hour on my laptop (GenSimpleTestData -s). as of Dec 6
+\item generating allAxioms (GenSimpleTestData -a ) real 2m6.851s (as of November)
+\item generating all ground statements (GenSimpleTestData -g ) real 5m58.213s (as of November)
+\item on a 1.5 GB file, running preprocess.sh takes - real 9m34.599s (as of November)
+\item training.sh takes - real 3m31.257s (as of November)
+\item test.sh takes - real 3m32.435s (as of November)
+\end{itemize}
+
+We currently have a lot of interesting variations in the compositional generation of language logic pairs,
+especially compared to our simple beginnings:
+
+\begin{itemize}
+\item six tenses (part, present, future and progressive or not) and correspond to SUMO expressions relative to a diectic 'Now'
+\item  negation (for action sentences and separately for attitude wrappers - believes, knows etc)
+\item  frequency-based selection of nouns and verbs
+\item  human names and social roles
+\item  restrict human actions with CaseRole of 'agent' to be IntentionalProcess(es) and otherwise use the CaseRole of 'experiencer'
+\item  use WordNet's noun and verb morphological exception lists
+\item  counts of objects (0-10) are used randomly a small portion of the time, divided between using numerals some times and digits other times
+\item  quantities of substances with units are used randomly a small portion of the time
+\item  Some sentences have metric dates and times, in several formats
+\item  Queries ('what','who') are generated sometimes, and with a question mark
+\item  WordNet verb frames are used that index verbs to a context of use. However, this is quite limited compared to VerbNet and FrameNet, and still allows many semantically non-sensical sentences to be generated, while also missing some common sentence forms, especially use of prepositions
+\item  Sentences with all variations of SUMO's modalAttribute are generated (Possibility, Obligation etc)
+\item  Sentences with all variations of SUMO's PropositionalAttitudes are generated 'believes','knows','says' etc
+\item  Sentences with 'says' have their content quoted
+\item Imperative sentences with the English "You (understood)" form
+\end{itemize}
+
+
+
+\label{sect:bib}
+\bibliographystyle{plain}
+\bibliography{SUMOBabyTechRep.tex}
+
+\end{document}
+

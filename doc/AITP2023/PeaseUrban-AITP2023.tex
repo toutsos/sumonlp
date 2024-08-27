@@ -1,0 +1,197 @@
+% easychair.tex,v 3.5 2017/03/15
+
+\documentclass{easychair}
+%\documentclass[EPiC]{easychair}
+%\documentclass[EPiCempty]{easychair}
+%\documentclass[debug]{easychair}
+%\documentclass[verbose]{easychair}
+%\documentclass[notimes]{easychair}
+%\documentclass[withtimes]{easychair}
+%\documentclass[a4paper]{easychair}
+%\documentclass[letterpaper]{easychair}
+
+\usepackage{doc}
+\usepackage{framed}
+\usepackage{tabularx}
+\usepackage{listings}
+
+% use this if you have a long article and want to create an index
+% \usepackage{makeidx}
+
+% In order to save space or manage large tables or figures in a
+% landcape-like text, you can use the rotating and pdflscape
+% packages. Uncomment the desired from the below.
+%
+% \usepackage{rotating}
+% \usepackage{pdflscape}
+
+% Some of our commands for this guide.
+%
+\newcommand{\easychair}{\textsf{easychair}}
+\newcommand{\miktex}{MiK{\TeX}}
+\newcommand{\texniccenter}{{\TeX}nicCenter}
+\newcommand{\makefile}{\texttt{Makefile}}
+\newcommand{\latexeditor}{LEd}
+
+
+%% Front Matter
+%%
+% Regular title as in the article class.
+%
+\title{Towards Open Domain English to Logic Translation}
+
+% Authors are joined by \and. Their affiliations are given by \inst, which indexes
+% into the list defined using \institute
+%
+\author{
+Adam Pease
+\and
+Josef Urban
+}
+
+% Institutes for affiliations are also joined by \and,
+\institute{
+  Articulate Software, San Jose, CA, USA\\
+  \email{apease@articulatesoftware.com}
+  \and
+  CIIRC, Czech Technical University, Prague, Czechia\\
+  \email{jurban@cvut.cz}
+ }
+
+%  \authorrunning{} has to be set for the shorter version of the authors' names;
+% otherwise a warning will be rendered in the running heads. When processed by
+% EasyChair, this command is mandatory: a document without \authorrunning
+% will be rejected by EasyChair
+
+\authorrunning{Pease\&Urban}
+
+% \titlerunning{} has to be set to either the main title or its shorter
+% version for the running heads. When processed by
+% EasyChair, this command is mandatory: a document without \titlerunning
+% will be rejected by EasyChair
+\titlerunning{Towards Open Domain English to Logic Translation}
+
+\begin{document}
+
+\maketitle
+
+%------------------------------------------------------------------------------
+\noindent\textbf{Introduction}\\
+\indent Logic-based systems have high degrees of trustworthiness due to
+their ability to document their reasoning and sources.  It is possible that logic-based
+systems may be used in the future to provide plausible explanations of answers
+provided by machine learning systems or to test their outputs against known facts.  
+However, there have been several barriers to language to
+logic translation.  Often very simple resulting logics are used, limiting the generality
+and power of the portion of natural language semantics that can be captured.  Approaches
+that have used linguistic elements as though they were logical terms suffer from the 
+absence of background knowledge that anchors the meaning of those terms and ensures that
+machine inference conforms to human understanding of linguistically-expressed concepts.
+Rule-based parsing has
+the difficulty of scaling up manual creation of language-to-logic interpretation
+rules.  Approaches to training a machine learning based system have been hampered by the challenge of creating training pairs of language
+and their equivalent logical translations. 
+Previous work in \textit{auto-formalization} of mathematics has shown how it is possible to 
+convert informal descriptions into fully formal logic expressions
+\cite{Wang2020}.  
+
+Our approach attempts to address these issues by using an expressive higher order logic and 
+a very large theory of world knowledge with a comprehensive mapping to linguistic
+tokens, and a synthetic corpus.  Our focus here is on the generation of training data of language and
+logic pairs. 
+
+We utilize the Suggested Upper Merged Ontology 
+(SUMO)\cite{np01,p11}, a comprehensive ontology
+of around 20,000 concepts and 80,000 hand-authored logical statements in a 
+higher-order logic, that has an associated tool set called Sigma\cite{ps14},
+integrated with leading theorem provers such as Eprover \cite{Schulz:AICOM-2002}  
+Vampire \cite{Kovacs:2013:FTP:2958031.2958033} and LEO-III \cite{BenzLEO2008}, and manually-created
+links\cite{np03} to the WordNet lexico-semantic database\cite{Fellbaum1998}.
+We have described \cite{ps14} elsewhere how to translate SUMO to the strictly
+first order language of TPTP \cite{tsp08}, as well as TF0/TFA
+\cite{Pease2019} and TH0/THF\cite{bp10,bpu23}.
+
+\vspace{10pt}
+
+\noindent\textbf{Synthetic Corpus}\\
+\indent We create a simple frame structure of linguistic elements that can be
+turned into a sentence and a logical expression.  We started with a simple subject-verb-object
+structure that corresponds to the most common English sentences, and then added extra features
+incrementally.  SUMO has such a large set of concepts and their corresponding linguistic
+equivalents that we can generate millions of sentences even for some of the simplest variations.
+Thanks to SUMO's collection of higher-order relationships we can include statements of authorship,
+belief, normative force and many other constructs that have been conspicuously absent in prior
+efforts at language to logic translation.
+
+Our conceptual library, along with lexical presentations of each of the concepts, allows us to 
+generate 1323 \textbf{Process} types - roughly equivalent to verbs, describing types of actions;  
+67 \textbf{CaseRole}s that describe the roles that entities play in processes;
+930 \textbf{Object} types that can be subjects, direct objects or indirect objects;
+323 \textbf{SocialRole}s that refer to people by their professions or other social characteristics;
+and 100 names of people.
+
+We generate a wide variety of linguistic features, some of which are:
+\vspace{-5pt}
+\begin{itemize}
+\setlength\itemsep{-2mm}
+\item You understood - imperatives - "Chop some wood!"
+\item epistemics - believes, knows - "John knows that Mary chops some wood."
+\item modals - possibility, necessity - "John may chop some wood."
+\item normative force - obligation, permission, prohibition - "John ought to chop some wood."
+\item numbers and units, quantities, qualifiers - "some" - "John chops 100 pounds of wood."
+\item times and dates - "On Tuesday, John chops some wood."
+\item politeness - "Please chop some wood."
+\item negation - "John doesn't chop some wood."
+\item desires - "Mary hopes that John chops some wood."
+\item authorship - said, wrote, quoted or unquoted - "Mary said `John chops some wood.'"
+\end{itemize}
+
+Just for subject-verb-object-indirectObject sentences we can theoretically generate 200 trillion
+combinations, and that does not include most of the additional linguistic features we can generate
+as listed above.  However, not all combinations make sense.  While SUMO has logical definitions that
+restrict many such spurious combinations (for example, that ``John'' can't be \texttt{Eating} a \texttt{Table}) it is 
+impractical in terms of the time required to run theorem proving to test all combinations.  So we
+use SUMO's relation \texttt{capability} which relates types of processes to the types of things that can
+play specific roles in those processes.  We also added the relation \texttt{prohibitedRole} to express
+combinations that are non-sensical.  Each of these relations is defined axiomatically so it can
+also support theorem proving, but is in a standard form that is read into a table that can be
+checked very quickly during sentence generation.  Reviewing generated sentences for bad combinations
+has been an important part of this work and creates a useful byproduct - preventing nonsensical 
+sentences from being generated requires an understanding of why these combinations do not accord
+with common sense, thereby adding more knowledge to SUMO about how the world does or does not work.
+Finally, the generation of a certain percentage of nonsense sentences has an impact only on the efficiency of
+the data set, rather than the resulting correctness of the trained system.  It simply allows the neural
+network to learn plausible logical equivalents for nonsense sentences.  As long as those examples are
+not so prevalent as to dominate training time, there is no impact.
+
+In addition, SUMO has language generation templates for all relations.  We generate arguments for these
+relations according to the type signature of the relation.  This provides a wide variety of sentence types
+beyond the notion of action sentences that our parameterized sentence generation covers.  Yet another
+generation step is provided by creating natural language paraphrases of all statements in SUMO.  
+
+While there is no way we can create a template or process to generate all possible types of sentences
+through manual anticipation of their structure, this does give us a very large and varied corpus of
+sentences with a deep formal semantic equivalent.
+
+\vspace{10pt}
+
+\noindent\textbf{Conclusion and Future Work}\\
+\indent We are using Google's Neural Machine Translation system\footnote{\url{https://github.com/tensorflow/nmt}}
+to train our translator.  In 5000 epochs we achieve a perplexity of 1.01\footnote{code at \url{https://github.com/ontologyportal/sigmakee} and \url{https://github.com/JUrban/sumonlp}}
+on a corpus of 10 million sentences and their logical equivalent. Our next step is to derive measures of success and coverage.  Sigma can tell us whether a given formula correct syntax, and relation argument types.
+Those tests are quick.  A more expensive test is use theorem proving to see whether each new statement
+entails a contradiction with respect to existing statements in SUMO.  This however is not necessarily a 
+sign of a flaw in translation from language to logic, since all human-authored texts are not factually
+consistent with one another.  We will begin by processes statements in the COCA news corpus, which is
+the largest freely available corpus of American English.
+ 
+ 
+\label{sect:bib}
+\bibliographystyle{plain}
+%\bibliographystyle{alpha}
+%\bibliographystyle{unsrt}
+%\bibliographystyle{abbrv}
+\bibliography{PeaseUrban-AITP2023}
+
+\end{document}
+
