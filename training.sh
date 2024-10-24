@@ -25,13 +25,17 @@ LOGS=$REPO/logs
 
 MODELS=$REPO/models
 
-rm -r $MODELS/model/hparam*
+if [ -d "$MODELS/model/hparam*" ]; then
+    rm -r $MODELS/model/hparam*
+else
+    echo "No hparam files to remove."
+fi
 
 mkdir -p $LOGS
 
 if [ -d "$MODELS/model" ]
 then
-      mkdir -p $MODELS/model 
+      mkdir -p $MODELS/model
 fi
 
 echo "output model in $MODELS/model"
@@ -41,7 +45,7 @@ date
 
 DATE=`date +"%y-%m-%d-%H-%M-%S"`
 
-export CUDA_VISIBLE_DEVICES=2
+export CUDA_VISIBLE_DEVICES=0
 python -m nmt.nmt \
   --encoder_type=bi \
   --attention=scaled_luong \
